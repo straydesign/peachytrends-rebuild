@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, DM_Sans } from "next/font/google";
+import { Libre_Caslon_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument",
+const libreCaslon = Libre_Caslon_Display({
+  variable: "--font-caslon",
   subsets: ["latin"],
   weight: "400",
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -57,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${instrumentSerif.variable} ${dmSans.variable} antialiased`}
+        className={`${libreCaslon.variable} ${dmSans.variable} antialiased`}
       >
         {children}
       </body>
