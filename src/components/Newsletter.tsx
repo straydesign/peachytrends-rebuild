@@ -40,7 +40,7 @@ export default function Newsletter() {
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-peach">
             Stay Connected
           </span>
-          <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl font-bold text-warm-black sm:text-4xl">
+          <h2 className="mt-3 font-heading text-3xl  text-warm-black sm:text-4xl">
             Join the Movement
           </h2>
           <p className="mt-4 text-warm-gray">

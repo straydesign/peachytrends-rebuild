@@ -65,7 +65,7 @@ export default function HowItWorks() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="mt-3 font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight text-cream sm:text-5xl"
+            className="mt-3 font-heading text-4xl  tracking-tight text-cream sm:text-5xl"
           >
             How It Works
           </motion.h2>
@@ -97,7 +97,7 @@ export default function HowItWorks() {
 
               <div className="relative rounded-2xl border border-cream/5 bg-cream/[0.03] p-8 backdrop-blur-sm transition-all duration-500 hover:border-peach/20 hover:bg-cream/[0.06]">
                 {/* Number */}
-                <span className="font-[family-name:var(--font-heading)] text-5xl font-bold text-peach/20 transition-colors duration-300 group-hover:text-peach/40">
+                <span className="font-heading text-5xl  text-peach/20 transition-colors duration-300 group-hover:text-peach/40">
                   {step.number}
                 </span>
 
@@ -106,7 +106,7 @@ export default function HowItWorks() {
                   {step.icon}
                 </div>
 
-                <h3 className="mt-6 font-[family-name:var(--font-heading)] text-xl font-bold text-cream">
+                <h3 className="mt-6 font-heading text-xl  text-cream">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-cream/50">
@@ -131,7 +131,7 @@ export default function HowItWorks() {
               transition={{ delay: 0.8 + i * 0.1 }}
               className="text-center"
             >
-              <div className="font-[family-name:var(--font-heading)] text-3xl font-bold text-peach sm:text-4xl lg:text-5xl">
+              <div className="font-heading text-3xl  text-peach sm:text-4xl lg:text-5xl">
                 {stat.value}
               </div>
               <p className="mt-2 text-sm text-cream/40">{stat.label}</p>

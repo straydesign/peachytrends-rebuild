@@ -37,10 +37,10 @@ export default function Navbar() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span className="font-[family-name:var(--font-heading)] text-2xl font-bold tracking-tight text-warm-black">
+            <span className="font-heading text-2xl  tracking-tight text-warm-black">
               Peachy
             </span>
-            <span className="font-[family-name:var(--font-heading)] text-2xl font-light text-peach">
+            <span className="font-heading text-2xl font-light text-peach">
               Trends
             </span>
           </a>
@@ -105,7 +105,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="font-[family-name:var(--font-heading)] text-3xl font-medium text-warm-black"
+                className="font-heading text-3xl font-medium text-warm-black"
               >
                 {link.label}
               </motion.a>

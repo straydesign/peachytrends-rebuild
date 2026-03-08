@@ -29,10 +29,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2">
-              <span className="font-[family-name:var(--font-heading)] text-2xl font-bold text-cream">
+              <span className="font-heading text-2xl  text-cream">
                 Peachy
               </span>
-              <span className="font-[family-name:var(--font-heading)] text-2xl font-light text-peach">
+              <span className="font-heading text-2xl font-light text-peach">
                 Trends
               </span>
             </div>

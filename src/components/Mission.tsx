@@ -5,34 +5,25 @@ import { useRef } from "react";
 
 const values = [
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
+    number: "01",
     title: "Purpose-Driven",
+    accent: "Every item supports a cause.",
     description:
-      "Every item in our collection supports a cause. Your purchase directly contributes to meaningful change in communities worldwide.",
+      "Your purchase directly contributes to meaningful change in communities worldwide. Not a percentage — every single piece.",
   },
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
+    number: "02",
     title: "Community First",
+    accent: "Families over fear.",
     description:
       "We partner with foundations that prioritize families and community building, creating lasting positive change from the ground up.",
   },
   {
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    number: "03",
     title: "Global Impact",
+    accent: "No borders, just impact.",
     description:
-      "From local communities to international initiatives, your support reaches where it's needed most — no borders, just impact.",
+      "From local communities to international initiatives, your support reaches where it's needed most.",
   },
 ];
 
@@ -42,7 +33,6 @@ export default function Mission() {
 
   return (
     <section id="mission" className="relative overflow-hidden py-24 lg:py-32">
-      {/* Background accent */}
       <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-peach/5 blur-3xl" />
 
       <div ref={ref} className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -59,10 +49,10 @@ export default function Mission() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="mt-3 font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight text-warm-black sm:text-5xl"
+            className="mt-3 font-heading text-4xl tracking-tight text-warm-black sm:text-5xl lg:text-6xl"
           >
             Fashion That{" "}
-            <span className="gradient-text">Gives Back</span>
+            <em className="gradient-text not-italic">Gives Back</em>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -76,45 +66,112 @@ export default function Mission() {
           </motion.p>
         </div>
 
-        {/* Value cards */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {values.map((value, i) => (
-            <motion.div
-              key={value.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 + i * 0.15 }}
-              className="group relative overflow-hidden rounded-2xl border border-peach/10 bg-white/60 p-8 backdrop-blur-sm transition-all duration-500 hover:border-peach/30 hover:shadow-xl hover:shadow-peach/5"
-            >
-              <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-peach/5 transition-all duration-500 group-hover:scale-150 group-hover:bg-peach/10" />
-              <div className="relative">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-peach/10 text-terracotta transition-colors duration-300 group-hover:bg-peach/20">
-                  {value.icon}
-                </div>
-                <h3 className="mt-5 font-[family-name:var(--font-heading)] text-xl font-bold text-warm-black">
-                  {value.title}
+        {/* Editorial Values — asymmetric staggered layout */}
+        <div className="mt-20 grid gap-0 lg:grid-cols-12">
+          {/* Value 01 — large, left-aligned with image */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.3 }}
+            className="relative border-t border-warm-black/10 pb-12 pt-8 lg:col-span-7 lg:pr-16"
+          >
+            <div className="flex items-baseline gap-4">
+              <span className="font-heading text-[8rem] leading-none text-peach/10 lg:text-[10rem]">
+                01
+              </span>
+              <div className="relative -top-4">
+                <h3 className="font-heading text-3xl text-warm-black sm:text-4xl">
+                  {values[0].title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-warm-gray">
-                  {value.description}
+                <p className="mt-1 font-heading text-lg italic text-terracotta">
+                  {values[0].accent}
                 </p>
               </div>
-            </motion.div>
-          ))}
+            </div>
+            <p className="mt-2 max-w-md text-base leading-relaxed text-warm-gray lg:ml-24">
+              {values[0].description}
+            </p>
+          </motion.div>
+
+          {/* Image — right side, overlaps into value 02 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: 0.5 }}
+            className="relative hidden overflow-hidden rounded-2xl lg:col-span-5 lg:row-span-2 lg:block"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80&auto=format&fit=crop"
+              alt="Fashion with purpose"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-warm-black/20 to-transparent" />
+          </motion.div>
+
+          {/* Value 02 — indented right */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.5 }}
+            className="relative border-t border-warm-black/10 pb-12 pt-8 lg:col-span-7"
+          >
+            <div className="flex items-baseline gap-4 lg:ml-12">
+              <span className="font-heading text-[8rem] leading-none text-peach/10 lg:text-[10rem]">
+                02
+              </span>
+              <div className="relative -top-4">
+                <h3 className="font-heading text-3xl text-warm-black sm:text-4xl">
+                  {values[1].title}
+                </h3>
+                <p className="mt-1 font-heading text-lg italic text-terracotta">
+                  {values[1].accent}
+                </p>
+              </div>
+            </div>
+            <p className="mt-2 max-w-md text-base leading-relaxed text-warm-gray lg:ml-36">
+              {values[1].description}
+            </p>
+          </motion.div>
+
+          {/* Value 03 — full width, centered */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.7 }}
+            className="relative border-t border-warm-black/10 pb-12 pt-8 lg:col-span-12"
+          >
+            <div className="flex items-baseline gap-4 lg:justify-center">
+              <span className="font-heading text-[8rem] leading-none text-peach/10 lg:text-[10rem]">
+                03
+              </span>
+              <div className="relative -top-4">
+                <h3 className="font-heading text-3xl text-warm-black sm:text-4xl">
+                  {values[2].title}
+                </h3>
+                <p className="mt-1 font-heading text-lg italic text-terracotta">
+                  {values[2].accent}
+                </p>
+              </div>
+            </div>
+            <p className="mx-auto mt-2 max-w-md text-center text-base leading-relaxed text-warm-gray">
+              {values[2].description}
+            </p>
+          </motion.div>
         </div>
 
         {/* Featured Partner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.7 }}
-          className="mt-20 overflow-hidden rounded-3xl bg-gradient-to-br from-warm-black to-brown-dark"
+          transition={{ delay: 0.8 }}
+          className="mt-12 overflow-hidden rounded-3xl bg-gradient-to-br from-warm-black to-brown-dark"
         >
           <div className="grid items-center lg:grid-cols-2">
             <div className="p-10 lg:p-14">
               <span className="inline-block rounded-full bg-peach/20 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-peach-light">
                 Featured Partner
               </span>
-              <h3 className="mt-5 font-[family-name:var(--font-heading)] text-3xl font-bold text-cream">
+              <h3 className="mt-5 font-heading text-3xl text-cream">
                 Fuerza Foundation
               </h3>
               <p className="mt-4 text-base leading-relaxed text-cream/70">

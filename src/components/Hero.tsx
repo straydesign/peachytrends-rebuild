@@ -61,7 +61,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-[family-name:var(--font-heading)] text-5xl font-bold leading-[1.1] tracking-tight text-warm-black sm:text-6xl lg:text-7xl"
+            className="font-heading text-5xl  leading-[1.1] tracking-tight text-warm-black sm:text-6xl lg:text-7xl"
           >
             Wear Your{" "}
             <span className="relative">

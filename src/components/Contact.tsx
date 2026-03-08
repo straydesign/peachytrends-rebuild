@@ -30,7 +30,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 }}
-              className="mt-3 font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight text-warm-black sm:text-5xl"
+              className="mt-3 font-heading text-4xl  tracking-tight text-warm-black sm:text-5xl"
             >
               Get in Touch
             </motion.h2>
@@ -103,7 +103,7 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="mt-4 font-[family-name:var(--font-heading)] text-2xl font-bold text-warm-black">
+                  <h3 className="mt-4 font-heading text-2xl  text-warm-black">
                     Message Sent!
                   </h3>
                   <p className="mt-2 text-warm-gray">

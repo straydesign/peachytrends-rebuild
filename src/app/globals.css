@@ -13,8 +13,8 @@
   --color-warm-gray: #6B5B4E;
   --color-warm-gray-light: #A89888;
 
-  --font-heading: var(--font-playfair);
-  --font-body: var(--font-inter);
+  --font-heading: var(--font-instrument);
+  --font-body: var(--font-dm);
 }
 
 html {

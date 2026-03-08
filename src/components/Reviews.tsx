@@ -56,7 +56,7 @@ export default function Reviews() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="mt-3 font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight text-warm-black sm:text-5xl"
+            className="mt-3 font-heading text-4xl  tracking-tight text-warm-black sm:text-5xl"
           >
             What Our{" "}
             <span className="gradient-text">Community</span> Says
