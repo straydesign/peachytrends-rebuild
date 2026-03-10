@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ basePath = "" }: { basePath?: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -36,7 +36,7 @@ export default function Navbar() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <a href={basePath || "/#"} className="flex items-center gap-2">
             <span className="font-heading text-2xl  tracking-tight text-warm-black">
               Peachy
             </span>
@@ -50,7 +50,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={`${basePath}${link.href}`}
                 className="group relative text-sm font-medium text-warm-gray transition-colors hover:text-warm-black"
               >
                 {link.label}
@@ -58,7 +58,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#shop"
+              href={`${basePath}#shop`}
               className="rounded-full bg-warm-black px-5 py-2.5 text-sm font-medium text-cream transition-all duration-300 hover:bg-terracotta hover:scale-105"
             >
               Shop Now
@@ -100,7 +100,7 @@ export default function Navbar() {
             {navLinks.map((link, i) => (
               <motion.a
                 key={link.href}
-                href={link.href}
+                href={`${basePath}${link.href}`}
                 onClick={() => setMobileOpen(false)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ export default function Navbar() {
               </motion.a>
             ))}
             <motion.a
-              href="#shop"
+              href={`${basePath}#shop`}
               onClick={() => setMobileOpen(false)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

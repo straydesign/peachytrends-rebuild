@@ -1,44 +1,48 @@
 "use client";
 
-const footerLinks = {
-  shop: [
-    { label: "All Products", href: "#shop" },
-    { label: "New Arrivals", href: "#shop" },
-    { label: "Best Sellers", href: "#shop" },
-    { label: "Gift Cards", href: "#shop" },
-  ],
-  company: [
-    { label: "Our Mission", href: "#mission" },
-    { label: "Our Impact", href: "#impact" },
-    { label: "Fuerza Foundation", href: "https://fuerza-foundation.org/" },
-    { label: "Careers", href: "#" },
-  ],
-  support: [
-    { label: "Contact Us", href: "#contact" },
-    { label: "Shipping & Returns", href: "#" },
-    { label: "Size Guide", href: "#" },
-    { label: "FAQ", href: "#" },
-  ],
-};
+function getFooterLinks(basePath: string) {
+  return {
+    shop: [
+      { label: "All Products", href: `${basePath}#shop` },
+      { label: "New Arrivals", href: `${basePath}#shop` },
+      { label: "Best Sellers", href: `${basePath}#shop` },
+      { label: "Gift Cards", href: `${basePath}#shop` },
+    ],
+    company: [
+      { label: "Our Mission", href: `${basePath}#mission` },
+      { label: "Our Impact", href: `${basePath}#impact` },
+      { label: "The Cause", href: "https://www.unrwa.org/" },
+      { label: "Careers", href: "#" },
+    ],
+    support: [
+      { label: "Contact Us", href: `${basePath}#contact` },
+      { label: "Shipping & Returns", href: "#" },
+      { label: "Size Guide", href: "#" },
+      { label: "FAQ", href: "#" },
+    ],
+  };
+}
 
-export default function Footer() {
+export default function Footer({ basePath = "" }: { basePath?: string }) {
+  const footerLinks = getFooterLinks(basePath);
+
   return (
     <footer className="border-t border-peach/10 bg-warm-black">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2">
+            <a href={basePath || "/"} className="flex items-center gap-2">
               <span className="font-heading text-2xl  text-cream">
                 Peachy
               </span>
               <span className="font-heading text-2xl font-light text-peach">
                 Trends
               </span>
-            </div>
+            </a>
             <p className="mt-4 text-sm leading-relaxed text-cream/50">
-              Apparel with purpose. Every purchase supports meaningful causes and
-              helps build stronger communities around the world.
+              Apparel with purpose. Every purchase supports Palestinian refugee
+              families with shelter, education, and essential resources.
             </p>
             <div className="mt-6 flex gap-3">
               <a
