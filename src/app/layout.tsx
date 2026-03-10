@@ -16,22 +16,23 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://peachytrends-video.vercel.app"),
   title: "Peachy Trends — Apparel with Purpose",
   description:
-    "Premium apparel that gives back. Every purchase supports foundations making real change. Wear your values with Peachy Trends.",
+    "Premium apparel that gives back. Every purchase supports Palestinian refugee families — shelter, education, and essential resources. Wear your values with Peachy Trends.",
   keywords: [
     "purpose-driven apparel",
     "ethical fashion",
     "charitable clothing",
-    "Fuerza Foundation",
+    "Palestinian refugee families",
     "Peachy Trends",
   ],
   openGraph: {
     title: "Peachy Trends — Wear Your Values",
     description:
-      "Premium apparel that gives back. Every purchase supports foundations making real change.",
+      "Premium apparel that gives back. Every purchase supports Palestinian refugee families with shelter, education, and essential resources.",
     type: "website",
-    url: "https://peachytrends.vercel.app",
+    url: "https://peachytrends-video.vercel.app",
     images: [
       {
         url: "/og-image.jpg",
